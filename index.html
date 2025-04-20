@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemoCare - Your Blood Donation Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B60707',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 font-sans transition-colors duration-300">
+    <!-- Dark/Light Mode Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+    </div>
+
+    <header class="bg-primary dark:bg-primary-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center mb-4">
+                <i class="fas fa-heartbeat text-5xl"></i>
+            </div>
+            <h1 class="text-4xl font-bold">HemoCare</h1>
+            <p class="mt-2 text-xl">Your Blood Donation Companion</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8 transition-colors duration-300">
+            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">About HemoCare</h2>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-2/3">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        HemoCare is a revolutionary Android application designed to connect blood donors with recipients in real-time. 
+                        Our mission is to make blood donation simpler, more efficient, and more rewarding for everyone involved.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        With HemoCare, you can easily find nearby blood donation camps, track your donation history, receive alerts 
+                        when your blood type is needed, and earn rewards for your life-saving contributions.
+                    </p>
+                    <div class="flex items-center mt-4">
+                        <i class="fas fa-shield-alt text-primary dark:text-red-400 mr-2"></i>
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Secure and privacy-focused</span>
+                    </div>
+                </div>
+                <div class="md:w-1/3">
+                    <div class="bg-gray-200 dark:bg-gray-700 rounded-lg p-4 h-64 flex items-center justify-center space-x-4 overflow-x-auto">
+                        <img src="hem.jpg" alt="HemoCare App Screenshot 1" class="h-full rounded shadow">
+                        <img src="hem1.jpg" alt="HemoCare App Screenshot 2" class="h-full rounded shadow">
+                        <img src="hem2.jpg" alt="HemoCare App Screenshot 3" class="h-full rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8 transition-colors duration-300">
+            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start">
+                    <div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-full mr-3">
+                        <i class="fas fa-bell text-primary dark:text-red-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800 dark:text-white">Emergency Alerts</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Get instant notifications when your blood type is urgently needed nearby.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-full mr-3">
+                        <i class="fas fa-map-marker-alt text-primary dark:text-red-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800 dark:text-white">Donation Camp Locator</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Find the nearest blood donation centers and mobile blood drives.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-full mr-3">
+                        <i class="fas fa-history text-primary dark:text-red-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800 dark:text-white">Donation Tracker</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Keep track of your donation history and eligibility dates.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-primary/10 dark:bg-primary/20 p-3 rounded-full mr-3">
+                        <i class="fas fa-award text-primary dark:text-red-400"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800 dark:text-white">Reward System</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Earn badges and recognition for your regular donations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8 transition-colors duration-300">
+            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Download HemoCare</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">
+                HemoCare is currently available for Android devices. The current version is <span class="font-semibold">1.2.0</span>, 
+                updated on June 15, 2025.
+            </p>
+            
+            <div class="flex flex-col items-center">
+                <div class="mb-6 w-full max-w-md">
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 flex items-center">
+                        <div class="bg-primary dark:bg-red-800 text-white p-3 rounded-lg mr-4">
+                            <i class="fab fa-android text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 dark:text-white">Android App</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Requires Android 8.0 or higher</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Size: 156.4 MB</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#" class="bg-primary hover:bg-red-800 text-white font-bold py-4 px-8 rounded-lg transition duration-300 text-center w-full max-w-md mb-4 flex items-center justify-center">
+                    Download HemoCare
+                </a>
+                
+                
+                
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-6">
+                    By downloading, you agree to our <a href="#" class="text-primary dark:text-red-400 hover:underline">terms and conditions</a> and 
+                    <a href="#" class="text-primary dark:text-red-400 hover:underline">privacy policy</a>.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-colors duration-300">
+            <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Getting Started</h2>
+            <ol class="list-decimal pl-5 text-gray-700 dark:text-gray-300 space-y-3">
+                <li class="font-medium">Download and install HemoCare from Google Play Store</li>
+                <li>Create your account with basic information</li>
+                <li>Set your blood type and donation preferences</li>
+                <li>Enable notifications to receive emergency alerts</li>
+                <li>Start exploring donation opportunities near you</li>
+            </ol>
+            
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 dark:bg-gray-950 text-white py-8 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">HemoCare</h3>
+                    <p class="text-gray-400">Making blood donation simple, efficient, and rewarding for everyone.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-primary dark:hover:text-red-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary dark:hover:text-red-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary dark:hover:text-red-400"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary dark:hover:text-red-400">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary dark:hover:text-red-400">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> hemocare@email.com</li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-2"></i> +213 770671330</li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Faculty of technology badji mokhtar Sidi amar Annaba</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 HemoCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        
+        // Check for saved user preference or use system preference
+        if (localStorage.getItem('color-theme') === 'dark' || 
+            (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            // Toggle icons
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+            
+            // Toggle theme
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
